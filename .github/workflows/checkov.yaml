@@ -1,0 +1,18 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: checkov-reviewdog
+        uses: misterek/action-checkov-reviewdog@master
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review # Optional. Change reporter
+          fail_on_error: "true" # Optional. Fail action if errors are found
+          filter_mode: "nofilter" # Optional. Check all files, not just the diff
+          skip_check: "CKV_GCP_13" # Optional. Skip Check CKV
+          working_directory: "testdata" # Optional. Change working directory
