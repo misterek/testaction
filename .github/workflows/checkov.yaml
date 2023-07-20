@@ -8,7 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: checkov-reviewdog
-        uses: misterek/action-checkov-reviewdog@master
+        uses: misterek/action-checkov-reviewdog@main
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Optional. Change reporter
