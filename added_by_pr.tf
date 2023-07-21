@@ -14,6 +14,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
+  #checkov:skip=CKV2_AWS_41:Demonstrate skipping certain things
   ami           = "ami-830c94e3"
   instance_type = "t2.micro"
 
