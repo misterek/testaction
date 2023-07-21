@@ -9,6 +9,9 @@ jobs:
         uses: actions/checkout@v3
       - name: check 
         run: git status
+      - name: This seems dumb but 🤷‍♂️
+        run: |
+          sudo chown -R root:root $GITHUB_WORKSPACE
       - name: checkov-reviewdog
         uses: misterek/action-checkov-reviewdog@main
         with:
